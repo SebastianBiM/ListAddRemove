@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/gol122/Desktop/Prace Java/commons-lang3-3.6/commons-lang3-3.6.jar"/>
+	<classpathentry kind="lib" path="build.fxbuild"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/GSON_lib"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ControlsFX"/>
+	<classpathentry kind="lib" path="C:/Users/gol122/Desktop/Prace Java/sqlite-jdbc-3.19.3.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/gol122/Desktop/Prace Java/commons-codec-1.10/commons-codec-1.10.jar" sourcepath="C:/Users/gol122/Desktop/Prace Java/commons-codec-1.10/commons-codec-1.10-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/gol122/Desktop/Prace%20Java/commons-codec-1.10/commons-codec-1.10-sources.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/gol122/Desktop/Prace Java/TestFX/testfx-core-4.0.4-alpha.jar" sourcepath="C:/Users/gol122/Desktop/Prace Java/TestFX/testfx-core-4.0.4-alpha.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gol122/Desktop/Prace Java/TestFX/testfx-legacy-4.0.4-alpha.jar" sourcepath="C:/Users/gol122/Desktop/Prace Java/TestFX/testfx-legacy-4.0.4-alpha.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gol122/Desktop/Prace Java/TestFX/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gol122/Desktop/Prace Java/JUnit/JUnitParams-1.0.4.jar" sourcepath="C:/Users/gol122/Desktop/Prace Java/JUnit/JUnitParams-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gol122/Desktop/Prace Java/TestFX/testfx-junit-4.0.4-alpha.jar" sourcepath="C:/Users/gol122/Desktop/Prace Java/TestFX/testfx-junit-4.0.4-alpha.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

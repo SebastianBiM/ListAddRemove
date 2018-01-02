@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="607.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Main.MainController">
+   <children>
+      <MenuBar fx:id="allMenu" layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="addF" mnemonicParsing="false" onAction="#addA" text="Add" />
+                  <MenuItem fx:id="deleteF" mnemonicParsing="false" onAction="#removeA" text="Delete " />
+                  <MenuItem mnemonicParsing="false" onAction="#saveListA" text="Save List" />
+                  <MenuItem mnemonicParsing="false" onAction="#readList" text="Read List" />
+                  <MenuItem mnemonicParsing="false" onAction="#searchPersonA" text="Search Person" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close App" />
+            </items>
+          </Menu>
+            <Menu fx:id="userMenu" mnemonicParsing="false" text="User">
+               <items>
+                  <MenuItem fx:id="logOutButton" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+                  <MenuItem mnemonicParsing="false" onAction="#addUser" text="Add New User" />
+                  <MenuItem mnemonicParsing="false" onAction="#changeMyPassword" text="Change My Password" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="personTable" editable="true" layoutY="26.0" prefHeight="537.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="surnameCol" prefWidth="75.0" text="Surname" />
+            <TableColumn fx:id="ageCol" prefWidth="75.0" text="Age" />
+            <TableColumn fx:id="sexCol" prefWidth="75.0" text="Sex" />
+            <TableColumn fx:id="locCol" prefWidth="75.0" text="Location" />
+        </columns>
+      </TableView>
+      <Label fx:id="hellolbl" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="572.0" prefHeight="25.0" prefWidth="190.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TitledPane alignment="CENTER" animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="366.0" prefWidth="300.0" text="Add New User" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.addController.AddUserController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="298.0">
+         <children>
+            <Button fx:id="add" layoutX="204.0" layoutY="276.0" mnemonicParsing="false" onAction="#addButton" prefHeight="36.0" prefWidth="80.0" text="Add" />
+            <Button fx:id="close" layoutX="14.0" layoutY="276.0" mnemonicParsing="false" onAction="#closeButton" prefHeight="36.0" prefWidth="80.0" text="Close" />
+            <TextField fx:id="UserName" layoutX="65.0" layoutY="24.0" prefHeight="38.0" prefWidth="149.0" promptText="User Name" />
+            <TextField fx:id="Login" layoutX="65.0" layoutY="75.0" prefHeight="38.0" prefWidth="149.0" promptText="Login" />
+            <PasswordField fx:id="Password" layoutX="65.0" layoutY="125.0" prefHeight="38.0" prefWidth="149.0" promptText="Password" />
+            <PasswordField fx:id="confirmPassword" layoutX="65.0" layoutY="178.0" prefHeight="38.0" prefWidth="149.0" promptText="Confirm The Password" />
+            <TextField fx:id="uniqueWord" layoutX="13.0" layoutY="227.0" prefHeight="38.0" prefWidth="273.0" promptText="Your Unique Word To Generate New Password" />
+         </children></AnchorPane>
+  </content>
+   <font>
+      <Font size="18.0" />
+   </font>
+</TitledPane>

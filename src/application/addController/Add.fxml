@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="319.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.addController.AddController">
+   <children>
+      <VBox layoutX="14.0" layoutY="6.0" prefHeight="252.0" prefWidth="102.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " wrappingWidth="61.13671875">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname: " wrappingWidth="74.13671875">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth: " wrappingWidth="114.13671875">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location: " wrappingWidth="87.13671875">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sex: " wrappingWidth="61.13671875">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add to: " wrappingWidth="61.13671875">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+      <Button fx:id="finish" layoutX="273.0" layoutY="272.0" mnemonicParsing="false" onAction="#btn1" prefHeight="19.0" prefWidth="117.0" text="Add" />
+      <TextField fx:id="nameT" layoutX="113.0" layoutY="27.0" prefHeight="4.0" prefWidth="149.0" />
+      <TextField fx:id="surnameT" layoutX="113.0" layoutY="66.0" />
+      <DatePicker fx:id="dateOfBirth" layoutX="113.0" layoutY="107.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="locT" layoutX="113.0" layoutY="147.0" />
+      <HBox layoutX="53.0" layoutY="194.0" prefHeight="25.0" prefWidth="343.0">
+         <children>
+            <RadioButton fx:id="sexM" maxHeight="40.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Male">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="sexToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="sexF" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Female" toggleGroup="$sexToggleGroup">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+      <ChoiceBox fx:id="addToUser" layoutX="79.0" layoutY="233.0" prefHeight="25.0" prefWidth="117.0" />
+      <Label fx:id="lblN" layoutX="266.0" layoutY="31.0" prefHeight="17.0" prefWidth="127.0" />
+      <Label fx:id="lblS" layoutX="268.0" layoutY="70.0" prefHeight="17.0" prefWidth="140.0" />
+      <Label fx:id="lblL" layoutX="268.0" layoutY="151.0" prefHeight="17.0" prefWidth="127.0" />
+      <Label fx:id="lblCheck" layoutX="20.0" layoutY="267.0" prefHeight="35.0" prefWidth="235.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
