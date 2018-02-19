@@ -28,7 +28,7 @@ public class TestAddController extends TestFXBase {
 	  public void start (Stage stage) throws Exception {
 //	    Parent mainNode = FXMLLoader.load(Main.class.getResource("/application/Main.fxml"));
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/application/Main.fxml"));
+        loader.setLocation(getClass().getResource("/application/Main/Main.fxml"));
         Pane root2 = (Pane) loader.load();
 		Scene scene = new Scene(root2);
 	    stage.setScene(scene);
@@ -76,7 +76,7 @@ public class TestAddController extends TestFXBase {
 		
 		clickOn(users);
 		Thread.sleep(1000);
-		clickOn(users.getItems().get(2));	
+		clickOn(users.getItems().get(0));	
 
 		clickOn(finish);
 		
@@ -124,7 +124,7 @@ public class TestAddController extends TestFXBase {
 		
 		clickOn(users);
 		Thread.sleep(1000);
-		clickOn(users.getItems().get(2));	
+		clickOn(users.getItems().get(0));	
 		
 		clickOn(finish);
 		
@@ -172,7 +172,7 @@ public class TestAddController extends TestFXBase {
 		
 		clickOn(users);
 		Thread.sleep(1000);
-		clickOn(users.getItems().get(2));	
+		clickOn(users.getItems().get(0));	
 		
 		clickOn(finish);
 		
@@ -220,7 +220,7 @@ public class TestAddController extends TestFXBase {
 		
 		clickOn(users);
 		Thread.sleep(1000);
-		clickOn(users.getItems().get(2));	
+		clickOn(users.getItems().get(0));	
 		
 		clickOn(finish);
 		
@@ -268,7 +268,7 @@ public class TestAddController extends TestFXBase {
 		
 		clickOn(users);
 		Thread.sleep(1000);
-		clickOn(users.getItems().get(2));	
+		clickOn(users.getItems().get(0));	
 		
 		clickOn(finish);
 		
@@ -315,7 +315,7 @@ public class TestAddController extends TestFXBase {
 		
 		clickOn(users);
 		Thread.sleep(1000);
-		clickOn(users.getItems().get(2));	
+		clickOn(users.getItems().get(0));	
 		
 		clickOn(finish);
 		

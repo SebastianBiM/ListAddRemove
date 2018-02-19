@@ -1,4 +1,4 @@
-package application.addController;
+package application.addUserController;
 
 import java.io.IOException;
 import java.net.URL;

@@ -30,7 +30,7 @@ public class LoginController implements Initializable {
 	@FXML private Button createNewProfile;
 	
 	private LoginModel loginModel = new LoginModel();
-
+		
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			
@@ -55,7 +55,9 @@ public class LoginController implements Initializable {
 			} else {
 				isConnected.setText("Not Connected");
 			}
+			
 		}
+			
 		
 	@FXML	
 	public void loadA(ActionEvent event) throws IOException, SQLException {
@@ -87,7 +89,7 @@ public class LoginController implements Initializable {
 	 @FXML
 	 public void createNewProfileA(ActionEvent event) throws Exception {
 		 	Stage primaryStage9 = new Stage();
-			Parent root9 = FXMLLoader.load(getClass().getResource("/application/addController/addUser.fxml"));
+			Parent root9 = FXMLLoader.load(getClass().getResource("/application/addUserController/addUser.fxml"));
 			Scene scene9 = new Scene(root9);
 			scene9.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
 			primaryStage9.setScene(scene9);

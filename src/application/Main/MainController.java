@@ -287,7 +287,7 @@ public class MainController implements Initializable {
 	 public void addUser(ActionEvent event) throws IOException {
      		
 		 	Stage primaryStage7 = new Stage();
-			Parent root7 = FXMLLoader.load(getClass().getResource("/application/addController/addUser.fxml"));
+			Parent root7 = FXMLLoader.load(getClass().getResource("/application/addUserController/addUser.fxml"));
 			Scene scene7 = new Scene(root7);
 			scene7.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
 			primaryStage7.setScene(scene7);

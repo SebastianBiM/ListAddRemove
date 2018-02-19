@@ -23,9 +23,8 @@ public class TestCreateUser extends TestFXBase {
 
 	  @Override
 	  public void start (Stage stage) throws Exception {
-//	    Parent mainNode = FXMLLoader.load(Main.class.getResource("/application/Main.fxml"));
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/application/Login.fxml"));
+        loader.setLocation(getClass().getResource("/application/loginController/Login.fxml"));
         Pane root2 = (Pane) loader.load();
 		Scene scene = new Scene(root2);
 	    stage.setScene(scene);
