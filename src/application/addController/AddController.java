@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import org.apache.commons.lang3.StringUtils;
 
 import application.Person.Person;
-import application.sqliteConnecction.SqliteConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.collections.ObservableList;
@@ -162,10 +161,10 @@ public class AddController implements Initializable {
 		 
 		 if(right == false && right2 == false) {	 
 			 
-		 listAd(dataList);
+			 listAd(dataList);
 		 
-		 Stage stage = (Stage) finish.getScene().getWindow();
-	     stage.close();
+			 Stage stage = (Stage) finish.getScene().getWindow();
+			 stage.close();
 		 }
      }
 	

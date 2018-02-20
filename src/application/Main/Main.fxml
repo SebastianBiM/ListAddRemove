@@ -18,7 +18,6 @@
               <MenuItem fx:id="addF" mnemonicParsing="false" onAction="#addA" text="Add" />
                   <MenuItem fx:id="deleteF" mnemonicParsing="false" onAction="#removeA" text="Delete " />
                   <MenuItem mnemonicParsing="false" onAction="#saveListA" text="Save List" />
-                  <MenuItem mnemonicParsing="false" onAction="#readList" text="Read List" />
                   <MenuItem mnemonicParsing="false" onAction="#searchPersonA" text="Search Person" />
                   <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close App" />
             </items>

@@ -34,29 +34,32 @@ public class LoginController implements Initializable {
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			
-			Thread t1 = new Thread(new Runnable() {
-				@Override
-				public void run() {
-					loginModel.logConnection();
-				}
-			});	
+			dataRunner();
 			
-			t1.start();
-			
-			try {
-				t1.join();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}	
-
 			if(loginModel.isDbConnected()){
 				isConnected.setText("Connected");
 			} else {
 				isConnected.setText("Not Connected");
 			}
-			
 		}
+		
+	public void dataRunner(){
+		Thread t1 = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				loginModel.logConnection();
+			}
+		});	
+		
+		t1.start();
+		
+		try {
+			t1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 			
 		
 	@FXML	
@@ -72,6 +75,7 @@ public class LoginController implements Initializable {
 				MainController mainController = (MainController)loader.getController();
 				mainController.getUserName(loginModel.getUser());
 				mainController.setTab(loginModel.getTab());
+				mainController.listRunner();
 				Scene scene5 = new Scene(root5);
 				scene5.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
 				primaryStage5.setScene(scene5);

@@ -46,7 +46,6 @@ import application.searchPerson.SearchPersonController;
 
 
 
-
 public class MainController implements Initializable {
 	
 	@FXML private MenuBar allMenu;
@@ -73,11 +72,17 @@ public class MainController implements Initializable {
 	private String jsonObject;
 	private String userNameCheck;
 	private String[] tab;
+	private ArrayList<Person> holdList = new ArrayList<Person>();
 	
 	
-	  @Override
+	@Override
 	  public void initialize(URL location, ResourceBundle resources){
-			
+	
+		/* 
+		 * The code allows editing the cells by a mouse
+		 * 
+		 */
+
 		    nameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("Name"));
 		    nameCol.setCellFactory(TextFieldTableCell.forTableColumn());
 		    nameCol.setOnEditCommit(
@@ -142,11 +147,46 @@ public class MainController implements Initializable {
 			personTable.setEditable(true);
 			personTable.setItems(dataList);
 	  }	
-	  
+	
+	/**
+	 *	listRunner runs the readJson method which reads listOfPeople 
+	 */
+	
+	public void listRunner(){
+		Thread t1 = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					readJson(dataList, jsonObject);
+				} catch (NullPointerException e){
+					System.out.println("Can't read a file");
+				}
+			}
+		});
+		
+		t1.start();
+		
+		try {
+			t1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 *	saveJson saves the current list from the table to file by json 
+	 */
 	  public void saveJson(ObservableList<Person> dataList, String jsonObject) throws IOException{
-
+		  
+		 for(Person i : dataList){
+			 if(!holdList.contains(i)){
+				 holdList.add(i);
+			 }
+		 }
+		  
 		 Gson gson = new Gson();
-		 jsonObject = gson.toJson(dataList);
+		 jsonObject = gson.toJson(holdList);
 		  		
 		 FileWriter writer = new FileWriter("listOfPeople.json");
 		 writer.write(jsonObject);
@@ -164,10 +204,12 @@ public class MainController implements Initializable {
  
 		 	  for(Person read : list){
 		 		  if(read.getUser().equals(userNameCheck)){
-		 			 dataList.add(read);
+		 			  dataList.add(read);
+		 		  } if (!read.getUser().equals(userNameCheck)){
+		 			  holdList.add(read);
 		 		  }
 		 	  }
-	  
+		 	  
 		 	  reader.close();	
 			  } catch (IOException e) {
 			  // TODO Auto-generated catch block
@@ -175,7 +217,7 @@ public class MainController implements Initializable {
 			  hellolbl.setText("Can't find a file");
 			  }			 
 		 }
-	 	 
+	
 	 public void getUserName(String userName){
 		 hellolbl.setText("Hello " + userName);
 		 userNameCheck = userName;
@@ -211,25 +253,25 @@ public class MainController implements Initializable {
 	  	
 	 @FXML
 	 public void saveListA(ActionEvent event) throws IOException {
-		 	
-		 try {	
+		    
+		 Alert alert = new Alert(AlertType.INFORMATION);
+		 alert.setTitle("Save Information");
+		 alert.setHeaderText(null);
+		 alert.setContentText("Saved");
+		 alert.showAndWait();		
+		 
+		   try {	
 			  saveJson(dataList, jsonObject);	
-			  } catch (IOException e) {
+		   } catch (IOException e) {
 			   e.printStackTrace();
-			  }
-
-		    Alert alert = new Alert(AlertType.INFORMATION);
-		    alert.setTitle("Save Information");
-		    alert.setHeaderText(null);
-		    alert.setContentText("Saved");
-		    alert.showAndWait();
+		   }
 	 }
 
 
-	 @FXML
-	 public void readList(ActionEvent event) throws Exception {
-		 readJson(dataList, jsonObject);
-	 }
+//	 @FXML
+//	 public void readList(ActionEvent event) throws Exception {
+//		 readJson(dataList, jsonObject);
+//	 }
 	 
 	 
 	 @FXML
@@ -257,19 +299,18 @@ public class MainController implements Initializable {
 	 @FXML
 	 public void logOut(ActionEvent event) throws IOException {
 		 
-				 Alert alert = new Alert(AlertType.CONFIRMATION);
+		 		 ButtonType buttonTypeLogOut = new ButtonType("Log Out");
+		 		 ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+				 
+		 		 Alert alert = new Alert(AlertType.CONFIRMATION);
 				 alert.setTitle("Log Out");
 				 alert.setHeaderText(null);
 				 alert.setContentText("Are you sure to Log Out?");
-		
-				 ButtonType buttonTypeLogOut = new ButtonType("Log Out");
-				 ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
-				 	
 				 alert.getButtonTypes().setAll(buttonTypeLogOut, buttonTypeCancel);
 		
 				 Optional<ButtonType> result = alert.showAndWait();
 				 if (result.get() == buttonTypeLogOut){
-					 
+					 	
 					 	Stage stage = (Stage) hellolbl.getScene().getWindow();
 					 	stage.close();
 					 	

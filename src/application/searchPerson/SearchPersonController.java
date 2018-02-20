@@ -19,6 +19,7 @@ import org.controlsfx.control.textfield.*;
 
 import application.Person.Person;
 
+
 public class SearchPersonController implements Initializable {
 	
 	@FXML private TextField searchText;
@@ -38,6 +39,7 @@ public class SearchPersonController implements Initializable {
 			TextFields.bindAutoCompletion(searchText, listSearch);
 		});
 	}
+	
 	
 	
 	@FXML
